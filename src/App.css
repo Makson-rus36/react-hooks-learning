@@ -1,0 +1,167 @@
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100svh;
+  text-align: left;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.sidebar {
+  border-right: 1px solid var(--border);
+  padding: 24px;
+  background: var(--bg);
+  overflow-y: auto;
+
+  h1 {
+    font-size: 24px;
+    margin: 0 0 16px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font: inherit;
+    transition: background 0.15s, border-color 0.15s;
+
+    &:hover {
+      background: var(--code-bg);
+    }
+
+    &.active {
+      background: var(--accent-bg);
+      border-color: var(--accent-border);
+      color: var(--accent);
+    }
+  }
+
+  .name {
+    font-family: var(--mono);
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+  }
+}
+
+.demo {
+  padding: 32px;
+  overflow-y: auto;
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 8px;
+    }
+  }
+
+  .version {
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .why {
+    max-width: 720px;
+    line-height: 150%;
+  }
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: var(--code-bg);
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 12px;
+  }
+}
+
+.demo button,
+.demo input,
+.demo select,
+.demo textarea {
+  font: inherit;
+}
+
+.demo button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--code-bg);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.demo input,
+.demo select,
+.demo textarea {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  margin-right: 8px;
+}
+
+.demo pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.demo .note {
+  color: var(--text);
+  font-size: 15px;
+  margin-top: 8px;
+}
